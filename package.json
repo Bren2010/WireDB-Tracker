@@ -1,0 +1,19 @@
+{
+  "name": "WireDB-Tracker",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "NODE_PATH=lib node --harmony tracker.js",
+    "test": "NODE_PATH=lib mocha -R spec"
+  },
+  "dependencies": {
+    "koa": "*",
+    "koa-logger": "*",
+    "koa-route": "*",
+    "validator": "*",
+    "bencode": "*",
+    "config": "*",
+    "q": "*",
+    "mocha": "*"
+  }
+}
