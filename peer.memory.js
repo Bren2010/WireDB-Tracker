@@ -80,7 +80,7 @@ module.exports.recommend = function(pid, peers) {
         }
     }
 
-    return Q([complete, incomplete, recommend])
+    return Q(recommend)
 }
 
 /**

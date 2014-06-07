@@ -4,6 +4,7 @@ var bencode = require('bencode')
 var validator = require('validator')
 
 var peer = require('./peer.' + config.database + '.js')
+var time = require('./time.' + config.database + '.js')
 
 // Load middleware.
 var logger    = require('koa-logger')
@@ -63,10 +64,12 @@ app.use(function *() {
     if (ok) {
         // Throw some data back.
         var recommend = yield peer.recommend(this.query.peer_id, peers)
+        var now = yield time.now()
 
         output = {
             interval: config.interval,
             peers: recommend,
+            now: now
         }
 
         this.body = bencode.encode(output)
