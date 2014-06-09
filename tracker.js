@@ -80,4 +80,4 @@ app.use(function *() {
 
 // Start tracker.
 app.listen(config.port)
-console.log('Server up at:  http://localhost:' + config.port + '/')
+console.log('Tracker up at:  http://localhost:' + config.port + '/')
