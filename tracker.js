@@ -7,7 +7,7 @@ var peer = require('./peer.' + config.database + '.js')
 var time = require('./time.' + config.database + '.js')
 
 // Load middleware.
-var logger    = require('koa-logger')
+var logger = require('koa-logger')
 
 // Setup
 var app = koa()
