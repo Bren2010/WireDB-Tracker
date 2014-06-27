@@ -61,7 +61,7 @@ app.use(function *() {
         ok = yield peer.keepAlive(this.query.peer_id, ip, this.query.port)
     }
 
-    if (ok) {
+    if (ok && this.query.event !== "stopped") {
         // Throw some data back.
         var recommend = yield peer.recommend(this.query.peer_id, peers)
         var now = yield time.now()
@@ -73,6 +73,8 @@ app.use(function *() {
         }
 
         this.body = bencode.encode(output)
+    } else if (ok && this.query.event === "stopped") {
+        this.body = bencode.encode('bye')
     } else {
         this.body = bencode.encode({failure_reason: 'Bad flow.'})
     }

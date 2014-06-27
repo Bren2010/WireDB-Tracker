@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "NODE_PATH=lib node --harmony tracker.js",
-    "test": "NODE_PATH=lib mocha -R spec"
+    "start": "node --harmony tracker.js",
+    "test": "NODE_ENV=default mocha -R spec"
   },
   "dependencies": {
     "koa": "*",
