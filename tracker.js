@@ -1,3 +1,6 @@
+// WireDB Tracker
+// Designed to resemble a BitTorrent or GitTorrent tracker.
+
 var koa = require('koa')
 var config = require('config')
 var bencode = require('bencode')
