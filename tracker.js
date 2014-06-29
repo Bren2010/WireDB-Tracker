@@ -4,6 +4,7 @@ var bencode = require('bencode')
 var validator = require('validator')
 
 var peer = require('./peer.' + config.database + '.js')
+var repo = require('./repo.' + config.database + '.js')
 var time = require('./time.' + config.database + '.js')
 
 // Load middleware.
@@ -64,11 +65,13 @@ app.use(function *() {
     if (ok && this.query.event !== "stopped") {
         // Throw some data back.
         var recommend = yield peer.recommend(this.query.peer_id, peers)
+        var head = yield repo.head()
         var now = yield time.now()
 
         output = {
             interval: config.interval,
             peers: recommend,
+            head: head,
             now: now
         }
 

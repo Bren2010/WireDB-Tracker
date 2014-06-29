@@ -33,6 +33,7 @@ describe('Flow', function() {
 
             assert.equal(obj.interval, config.interval)
             assert.equal(obj.now, Math.floor(Date.now() / 1000))
+            assert.equal(obj.head.length, 40)
             assert.equal(obj.peers.length, 0)
 
             done()
@@ -55,6 +56,7 @@ describe('Flow', function() {
 
             assert.equal(obj.interval, config.interval)
             assert.equal(obj.now, Math.floor(Date.now() / 1000))
+            assert.equal(obj.head.length, 40)
             assert.equal(obj.peers.length, 1)
             assert.equal(obj.peers[0].peer_id, pid1)
             assert.notEqual(typeof(obj.peers[0].ip), undefined)
@@ -71,6 +73,7 @@ describe('Flow', function() {
 
             assert.equal(obj.interval, config.interval)
             assert.equal(obj.now, Math.floor(Date.now() / 1000))
+            assert.equal(obj.head.length, 40)
             assert.equal(obj.peers.length, 1)
             assert.equal(obj.peers[0].peer_id, pid2)
             assert.notEqual(typeof(obj.peers[0].ip), undefined)
